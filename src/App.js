@@ -22,36 +22,62 @@ const useStyles = makeStyles({
 });
 
 function getDisableVid(list_vid) {
+  // const video_condition = {
+  //   1: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  //   2: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  //   3: {
+  //     disable: [3, 4],
+  //   },
+  //   4: {
+  //     disable: [3, 4],
+  //   },
+  //   5: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  //   6: {
+  //     disable: [6, 9],
+  //   },
+  //   7: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  //   8: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  //   9: {
+  //     disable: [6, 9],
+  //   },
+  //   10: {
+  //     disable: [1, 2, 5, 7, 8, 10],
+  //   },
+  // };
   const video_condition = {
     1: {
-      disable: [1, 2, 5, 7, 8, 10],
+      disable: [1, 2, 4, 6, 8],
     },
     2: {
-      disable: [1, 2, 5, 7, 8, 10],
+      disable: [1, 2, 4, 6, 8],
     },
     3: {
-      disable: [3, 4],
+      disable: [3],
     },
     4: {
-      disable: [3, 4],
+      disable: [1, 2, 4, 6, 8],
     },
     5: {
-      disable: [1, 2, 5, 7, 8, 10],
+      disable: [5, 7],
     },
     6: {
-      disable: [6, 9],
+      disable: [1, 2, 4, 6, 8],
     },
     7: {
-      disable: [1, 2, 5, 7, 8, 10],
+      disable: [5, 7],
     },
     8: {
-      disable: [1, 2, 5, 7, 8, 10],
-    },
-    9: {
-      disable: [6, 9],
-    },
-    10: {
-      disable: [1, 2, 5, 7, 8, 10],
+      disable: [1, 2, 4, 6, 8],
     },
   };
   if (list_vid.length === 0) {
@@ -60,7 +86,9 @@ function getDisableVid(list_vid) {
   const limit_video = 4;
   const len_list = list_vid.length;
   if (len_list >= limit_video) {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    //return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    return [1, 2, 3, 4, 5, 6, 7, 8];
+
   }
   const last_video = list_vid[len_list - 1];
 
@@ -84,8 +112,8 @@ export default function MediaControlCard() {
   const [disable6, setDisable6] = useState(false);
   const [disable7, setDisable7] = useState(false);
   const [disable8, setDisable8] = useState(false);
-  const [disable9, setDisable9] = useState(false);
-  const [disable10, setDisable10] = useState(false);
+  //const [disable9, setDisable9] = useState(false);
+  //const [disable10, setDisable10] = useState(false);
 
   const [choose1, setChoose1] = useState(false)
   const [choose2, setChoose2] = useState(false)
@@ -95,11 +123,73 @@ export default function MediaControlCard() {
   const [choose6, setChoose6] = useState(false)
   const [choose7, setChoose7] = useState(false)
   const [choose8, setChoose8] = useState(false)
-  const [choose9, setChoose9] = useState(false)
-  const [choose10, setChoose10] = useState(false)
+  //const [choose9, setChoose9] = useState(false)
+  //const [choose10, setChoose10] = useState(false)
 
 
   const [listVid, setListVid] = useState([]);
+  // const exercises = [
+  //   {
+  //     name: "1.Box squat",
+  //     vid: 1,
+  //     disable: disable1,
+  //     choose: choose1
+  //   },
+  //   {
+  //     name: "2.Sumo squat",
+  //     vid: 2,
+  //     disable: disable2,
+  //     choose: choose2
+  //   },
+  //   {
+  //     name: "3.Crunch –hand at chest",
+  //     vid: 3,
+  //     disable: disable3,
+  //     choose: choose3
+  //   },
+  //   {
+  //     name: "4.Crunch –hand at ear",
+  //     vid: 4,
+  //     disable: disable4,
+  //     choose: choose4
+  //   },
+  //   {
+  //     name: "5.Glute Bridge",
+  //     vid: 5,
+  //     disable: disable5,
+  //     choose: choose5
+  //   },
+  //   {
+  //     name: "6.Torso-elevated push-up",
+  //     vid: 6,
+  //     disable: disable6,
+  //     choose: choose6
+  //   },
+  //   {
+  //     name: "7.Lunges",
+  //     vid: 7,
+  //     disable: disable7,
+  //     choose: choose7
+  //   },
+  //   {
+  //     name: "8.Side crunch",
+  //     vid: 8,
+  //     disable: disable8,
+  //     choose: choose8
+  //   },
+  //   {
+  //     name: "9.Scapula shrug",
+  //     vid: 9,
+  //     disable: disable9,
+  //     choose: choose9
+  //   },
+  //   {
+  //     name: "10.Donkey kick",
+  //     vid: 10,
+  //     disable: disable10,
+  //     choose: choose10
+  //   },
+  // ];
   const exercises = [
     {
       name: "1.Box squat",
@@ -120,49 +210,36 @@ export default function MediaControlCard() {
       choose: choose3
     },
     {
-      name: "4.Crunch –hand at ear",
+      name: "4.Glute Bridge",
       vid: 4,
       disable: disable4,
       choose: choose4
     },
     {
-      name: "5.Glute Bridge",
+      name: "5.Torso-elevated push-up",
       vid: 5,
       disable: disable5,
       choose: choose5
     },
     {
-      name: "6.Torso-elevated push-up",
+      name: "6.Lunges",
       vid: 6,
       disable: disable6,
       choose: choose6
     },
     {
-      name: "7.Lunges",
+      name: "7.Scapula shrug",
       vid: 7,
       disable: disable7,
       choose: choose7
     },
     {
-      name: "8.Side crunch",
+      name: "8.Donkey kick",
       vid: 8,
       disable: disable8,
       choose: choose8
     },
-    {
-      name: "9.Scapula shrug",
-      vid: 9,
-      disable: disable9,
-      choose: choose9
-    },
-    {
-      name: "10.Donkey kick",
-      vid: 10,
-      disable: disable10,
-      choose: choose10
-    },
   ];
-
   useEffect(() => {
     var listDisable = getDisableVid(listVid)
 
@@ -179,8 +256,8 @@ export default function MediaControlCard() {
       setDisable6(listDisable.includes(6) ? true : false)
       setDisable7(listDisable.includes(7) ? true : false)
       setDisable8(listDisable.includes(8) ? true : false)
-      setDisable9(listDisable.includes(9) ? true : false)
-      setDisable10(listDisable.includes(10) ? true : false)
+      //setDisable9(listDisable.includes(9) ? true : false)
+      //setDisable10(listDisable.includes(10) ? true : false)
 
       setChoose1(listVid.includes(1) ? true : false)
       setChoose2(listVid.includes(2) ? true : false)
@@ -190,8 +267,8 @@ export default function MediaControlCard() {
       setChoose6(listVid.includes(6) ? true : false)
       setChoose7(listVid.includes(7) ? true : false)
       setChoose8(listVid.includes(8) ? true : false)
-      setChoose9(listVid.includes(9) ? true : false)
-      setChoose10(listVid.includes(10) ? true : false)
+      //setChoose9(listVid.includes(9) ? true : false)
+      //setChoose10(listVid.includes(10) ? true : false)
     }
 
 
@@ -220,8 +297,8 @@ export default function MediaControlCard() {
             setDisable6(false)
             setDisable7(false)
             setDisable8(false)
-            setDisable9(false)
-            setDisable10(false)
+            //setDisable9(false)
+            //setDisable10(false)
           }}>Reset list</Button>
         </Grid>
         <Grid item xs={12} align="center">
