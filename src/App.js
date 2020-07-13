@@ -305,7 +305,7 @@ export default function MediaControlCard() {
           <Typography display="inline">List video choose : </Typography>
           {listVid.map(Vid => (
             <Typography display="inline">
-              {Vid + " "}
+              {"30" + Vid + " "}
 
             </Typography>
           ))}
