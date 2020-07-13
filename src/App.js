@@ -192,49 +192,49 @@ export default function MediaControlCard() {
   // ];
   const exercises = [
     {
-      name: "1.Box squat",
+      name: "301.Box squat",
       vid: 1,
       disable: disable1,
       choose: choose1
     },
     {
-      name: "2.Sumo squat",
+      name: "302.Sumo squat",
       vid: 2,
       disable: disable2,
       choose: choose2
     },
     {
-      name: "3.Crunch –hand at chest",
+      name: "303.Crunch –hand at chest",
       vid: 3,
       disable: disable3,
       choose: choose3
     },
     {
-      name: "4.Glute Bridge",
+      name: "304.Glute Bridge",
       vid: 4,
       disable: disable4,
       choose: choose4
     },
     {
-      name: "5.Torso-elevated push-up",
+      name: "305.Torso-elevated push-up",
       vid: 5,
       disable: disable5,
       choose: choose5
     },
     {
-      name: "6.Lunges",
+      name: "306.Lunges",
       vid: 6,
       disable: disable6,
       choose: choose6
     },
     {
-      name: "7.Scapula shrug",
+      name: "307.Scapula shrug",
       vid: 7,
       disable: disable7,
       choose: choose7
     },
     {
-      name: "8.Donkey kick",
+      name: "308.Donkey kick",
       vid: 8,
       disable: disable8,
       choose: choose8
